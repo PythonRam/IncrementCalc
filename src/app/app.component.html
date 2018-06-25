@@ -4,8 +4,8 @@
     <mat-datepicker-toggle matSuffix [for]="doj"></mat-datepicker-toggle>
     <mat-datepicker #doj></mat-datepicker>
   </mat-form-field>
-  <mat-form-field class="example-full-width">
-    <input type="number" matInput placeholder="Days before increment">
+  <mat-form-field>
+    <input type="number" #dbi [formControl]="days_before_increment" matInput placeholder="Days before increment">
   </mat-form-field>
 </div>
 
