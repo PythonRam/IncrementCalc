@@ -1,18 +1,18 @@
 <div class="main">
   <mat-form-field>
-    <input matInput [matDatepicker]="doj" placeholder="Date of joining" [formControl]="date_of_joining">
+    <input matInput  (dateChange)="computeMinMax()" (change)="computeMinMax()" [matDatepicker]="doj" placeholder="Date of joining" [formControl]="date_of_joining">
     <mat-datepicker-toggle matSuffix [for]="doj"></mat-datepicker-toggle>
     <mat-datepicker #doj></mat-datepicker>
   </mat-form-field>
   <mat-form-field>
-    <input type="number" #dbi [formControl]="days_before_increment" matInput placeholder="Days before increment">
+    <input type="number" (change)="computeMinMax()" #dbi [formControl]="days_before_increment" matInput placeholder="Days before increment">
   </mat-form-field>
 </div>
 
 <div id="leaveContainer">
-  <app-leave *ngFor="let leave of leaves"></app-leave>
+  <app-leave *ngFor="let leave of leaves; let i = index;" [minDate]="minDate" [maxDate]="maxDate" (days)="days(e,i)" (delete)="delete(i)" ></app-leave>
 </div>
 
 <div id="addLeave">
-  <button>Add Leave</button>
+  <button (click)="addLeave()">Add Leave</button>
 </div>

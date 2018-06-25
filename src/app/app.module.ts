@@ -5,9 +5,9 @@ import { NgModule } from '@angular/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatMomentDateModule } from '@angular/material-moment-adapter';
+
 import { AppComponent } from './app.component';
-import { MatInputModule } from '@angular/material';
+import { MatInputModule, MatNativeDateModule } from '@angular/material';
 import { LeaveComponent } from './components/leave/leave.component';
 @NgModule({
   declarations: [
@@ -21,7 +21,7 @@ import { LeaveComponent } from './components/leave/leave.component';
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatMomentDateModule,
+    MatNativeDateModule,
     MatInputModule
   ],
   providers: [],

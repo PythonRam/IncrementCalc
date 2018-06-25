@@ -17,6 +17,9 @@ export class LeaveComponent implements OnInit {
   constructor() {
 
   }
+  DeleteLeave() {
+    this.delete.emit();
+  }
 
   ngOnInit() {
   }
