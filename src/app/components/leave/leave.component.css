@@ -1,6 +1,20 @@
-.deleteButton{
-    background-color: #eee;
-    color: #ee0000;
-    border: none;
-    cursor: pointer;
+.deleteButton {
+  background-color: #eee;
+  color: #ee0000;
+  border: none;
+  cursor: pointer;
+  height: 2vw;
+  width: 5vw;
+  margin: auto;
+}
+
+.leave-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1.5fr 2fr;
+}
+
+.leave-container>mat-form-field {
+  width: 90%;
+  margin: auto;
 }

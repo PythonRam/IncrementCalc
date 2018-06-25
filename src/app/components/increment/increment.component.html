@@ -1,20 +1,24 @@
 <div class="main">
-    <mat-form-field>
-      <input matInput  (dateChange)="computeMinMax()" (change)="computeMinMax()" [matDatepicker]="doj" placeholder="Date of joining" [formControl]="date_of_joining">
-      <mat-datepicker-toggle matSuffix [for]="doj"></mat-datepicker-toggle>
-      <mat-datepicker #doj></mat-datepicker>
-    </mat-form-field>
-    <mat-form-field>
-      <input type="number" (change)="computeMinMax()" #dbi [formControl]="days_before_increment" matInput placeholder="Days before increment">
-    </mat-form-field>
-    <span *ngIf="date_of_increment">{{date_of_increment.toDateString()}}</span>
+  <mat-form-field>
+    <input matInput (dateChange)="computeMinMax()" (change)="computeMinMax()" [matDatepicker]="doj" placeholder="Starting Date"
+      [formControl]="date_of_joining">
+    <mat-datepicker-toggle matSuffix [for]="doj"></mat-datepicker-toggle>
+    <mat-datepicker #doj></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field>
+    <input type="number" (change)="computeMinMax()" #dbi [formControl]="days_before_increment" matInput placeholder="Days before increment">
+  </mat-form-field>
+  <div>
+    <p>Final Date:
+      <span *ngIf="date_of_increment">{{date_of_increment.toDateString()}}</span>
+    </p>
   </div>
-  
-  <div id="leaveContainer">
-    <app-leave *ngFor="let leave of leaves; let i = index;" [minDate]="minDate" (days)="days($event,i)" (delete)="delete(i)" ></app-leave>
-  </div>
-  
-  <div id="addLeave">
-    <button (click)="addLeave()">Add Leave</button>
-  </div>
-  
+</div>
+
+<div id="leaveContainer">
+  <app-leave *ngFor="let leave of leaves; let i = index;" [minDate]="minDate" (days)="days($event,i)" (delete)="delete(i)"></app-leave>
+</div>
+
+<div class="addLeave">
+  <button [disabled]="!date_of_joining.value || !days_before_increment.value" (click)="addLeave()">Add Leave</button>
+</div>

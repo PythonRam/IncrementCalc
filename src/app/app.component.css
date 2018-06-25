@@ -1,0 +1,41 @@
+.content {
+  width: 80%;
+  margin: auto;
+  margin-top: 4vw;
+  min-width: 900px;
+  max-width: 1200px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #222;
+  background-color: white;
+}
+
+.addIncrement {
+  padding: 2vw;
+  display: flex;
+  justify-content: center;
+}
+
+.addIncrement>button {
+  width: auto;
+  height: auto;
+  border: none;
+  background-color: blueviolet;
+  color: white;
+  cursor: pointer;
+  padding: 0.5vw;
+  margin: auto;
+}
+
+.addIncrement>button:disabled {
+  background-color: #eeeeee;
+  cursor: not-allowed;
+}
+
+.line{
+  width: 100%;
+  border-style: solid;
+  border-width: 0.8px;
+  border-right: none;
+  border-left: none;
+}

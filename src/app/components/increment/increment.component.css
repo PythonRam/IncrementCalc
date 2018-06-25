@@ -1,0 +1,33 @@
+.main {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 1vw;
+}
+
+.main>div>p>span {
+  background-color: yellow;
+  color: black;
+  font-weight: bold;
+}
+
+.addLeave{
+    display: flex;
+    justify-content: center;
+}
+
+.addLeave>button {
+  width: auto;
+  height: auto;
+  border: none;
+  background-color: green;
+  color: white;
+  cursor: pointer;
+  padding: 0.5vw;
+  margin: auto;
+  margin-bottom: 0.5vw;
+}
+
+.addLeave>button:disabled{
+    background-color: #eee;
+    cursor: not-allowed;
+}
