@@ -36,11 +36,29 @@
   padding-bottom: 0.8vw;
   margin-bottom: 1vw;
   width: 90%;
-
-
 }
 
 .addLeave>button:disabled {
   background-color: #eee;
   cursor: not-allowed;
+}
+
+.headers {
+  display: none;
+}
+
+@media print {
+  mat-datepicker-toggle,
+  .addLeave {
+    display: none;
+  }
+  .headers {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 80%;
+    margin: auto;
+  }
+  input{
+    font-weight: bold;
+  }
 }

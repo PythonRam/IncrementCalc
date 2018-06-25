@@ -1,11 +1,17 @@
 <div class="main">
   <mat-form-field>
+    <span class="onlyPrint" matPrefix>
+     Starting Date: 
+    </span>
     <input matInput (dateChange)="computeMinMax()" (change)="computeMinMax()" [matDatepicker]="doj" placeholder="Starting Date"
       [formControl]="date_of_joining">
     <mat-datepicker-toggle matSuffix [for]="doj"></mat-datepicker-toggle>
     <mat-datepicker #doj></mat-datepicker>
   </mat-form-field>
   <mat-form-field>
+    <span class="onlyPrint" matPrefix>
+      Increment Gap: 
+    </span>
     <input type="number" (change)="computeMinMax()" #dbi [formControl]="days_before_increment" matInput placeholder="Days before increment">
   </mat-form-field>
   <div>
@@ -13,6 +19,12 @@
       <span *ngIf="date_of_increment">{{date_of_increment.toDateString()}}</span>
     </p>
   </div>
+</div>
+
+<div *ngIf="leaves.length>0" class="headers">
+  <b>From</b>
+  <b>To</b>
+  <b>Number of Leaves</b>
 </div>
 
 <div *ngIf="leaves.length>0" class="leaveContainer">

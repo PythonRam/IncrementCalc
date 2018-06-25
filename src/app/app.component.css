@@ -39,3 +39,10 @@
   border-right: none;
   border-left: none;
 }
+
+@media print {
+  mat-datepicker-toggle,
+  .addIncrement{
+    display: none;
+  }
+}

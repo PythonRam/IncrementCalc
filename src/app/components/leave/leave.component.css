@@ -18,3 +18,23 @@
   width: 70%;
   margin: auto;
 }
+
+.leave-container>div {
+  display: flex;
+  flex-direction: row;
+}
+
+@media print {
+  mat-datepicker-toggle,
+  .deleteButton {
+    display: none;
+  }
+  .leave-container>div>p:nth-child(1) {
+    display: none;
+  }
+  
+  .leave-container>div>p:nth-child(2) {
+    text-align: center;
+    margin-left: 100px;
+  }
+}

@@ -23,8 +23,8 @@ export class IncrementComponent implements OnChanges {
   ngOnChanges() {
     if (this.initDate) {
       this.date_of_joining.setValue(this.initDate);
-      this.computeMinMax();
     }
+    this.computeMinMax();
   }
 
   computeDate() {
