@@ -1,1 +1,8 @@
-<app-increment></app-increment>
+<div *ngFor="let increment of increments; let i= index;">
+  <app-increment *ngIf="i === 0" [initDate]="null" (yearData)="yearsData($event,i)"></app-increment>
+  <app-increment *ngIf="i !== 0" [initDate]="increments[i-1].final" (yearData)="yearsData($event,i)"></app-increment>
+</div>
+
+<div class="addIncrement">
+  <button [disabled]=" increments.length > 0 &&  !increments[increments.length-1].final" (click)="addIncrement()">Add Year</button>
+</div>

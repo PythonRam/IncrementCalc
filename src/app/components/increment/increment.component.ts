@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, OnChanges } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 
@@ -7,10 +7,10 @@ import { FormControl } from '@angular/forms';
   templateUrl: './increment.component.html',
   styleUrls: ['./increment.component.css']
 })
-export class IncrementComponent {
-
+export class IncrementComponent implements OnChanges {
+  @Input('initDate') initDate: Date;
   @Output('yearData') yearData: EventEmitter<any> = new EventEmitter();
-  @Input('date_of_joining') date_of_joining = new FormControl();
+  date_of_joining = new FormControl();
   days_before_increment = new FormControl(365);
   date_of_increment: Date;
   leaves = [];
@@ -18,6 +18,13 @@ export class IncrementComponent {
 
   constructor() {
 
+  }
+
+  ngOnChanges() {
+    if (this.initDate) {
+      this.date_of_joining.setValue(this.initDate);
+      this.computeMinMax();
+    }
   }
 
   computeDate() {
