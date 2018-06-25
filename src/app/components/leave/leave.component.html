@@ -8,8 +8,8 @@
   </mat-form-field>
   <mat-form-field [hidden]="leave_start.valid">
     <input id="end_date" matInput (dateChange)="computeDays()" [min]="leave_start.value" [matDatepicker]="dle" placeholder="Leave End Date"
-      [formControl]="leave_end">
-    <mat-datepicker-toggle matSuffix [for]="dle"></mat-datepicker-toggle>
+      [formControl]="leave_end" [disabled]="!leave_start.value">
+    <mat-datepicker-toggle [disabled]="!leave_start.value" matSuffix [for]="dle"></mat-datepicker-toggle>
     <mat-datepicker #dle></mat-datepicker>
   </mat-form-field>
   <div>

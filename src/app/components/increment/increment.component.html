@@ -15,7 +15,7 @@
   </div>
 </div>
 
-<div id="leaveContainer">
+<div *ngIf="leaves.length>0" class="leaveContainer">
   <app-leave *ngFor="let leave of leaves; let i = index;" [minDate]="minDate" (days)="days($event,i)" (delete)="delete(i)"></app-leave>
 </div>
 

@@ -7,8 +7,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { AppComponent } from './app.component';
-import { MatInputModule, MatNativeDateModule } from '@angular/material';
+import { MatInputModule, MatNativeDateModule, DateAdapter } from '@angular/material';
 import { LeaveComponent } from './components/leave/leave.component';
+import { DateFormat } from './dateFormat';
 import { IncrementComponent } from './components/increment/increment.component';
 @NgModule({
   declarations: [
@@ -26,7 +27,13 @@ import { IncrementComponent } from './components/increment/increment.component';
     MatNativeDateModule,
     MatInputModule
   ],
-  providers: [],
+  providers: [
+    { provide: DateAdapter, useClass: DateFormat },
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private dateAdapter: DateAdapter<Date>) {
+    dateAdapter.setLocale('en-in'); // DD/MM/YYYY
+  }
+}

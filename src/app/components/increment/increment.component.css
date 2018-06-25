@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-around;
   padding-top: 1vw;
+  padding-bottom: 1vw;
 }
 
 .main>div>p>span {
@@ -10,9 +11,9 @@
   font-weight: bold;
 }
 
-.addLeave{
-    display: flex;
-    justify-content: center;
+.addLeave {
+  display: flex;
+  justify-content: center;
 }
 
 .addLeave>button {
@@ -27,7 +28,19 @@
   margin-bottom: 0.5vw;
 }
 
-.addLeave>button:disabled{
-    background-color: #eee;
-    cursor: not-allowed;
+.leaveContainer {
+  border-style: dashed;
+  border-width: 0.5px;
+  margin: auto;
+  padding-top: 0.8vw;
+  padding-bottom: 0.8vw;
+  margin-bottom: 1vw;
+  width: 90%;
+
+
+}
+
+.addLeave>button:disabled {
+  background-color: #eee;
+  cursor: not-allowed;
 }
