@@ -24,7 +24,12 @@ export class LeaveComponent implements OnInit {
   computeDays() {
     if (this.leave_start.valid && this.leave_end.valid && this.leave_end.value >= this.leave_start.value) {
       this.leaves = ((this.leave_end.value - this.leave_start.value) / (24 * 60 * 60 * 1000)) + 1;
-      this.days.emit(this.leaves);
+      const leaveObj = {
+        start_date: new Date(this.leave_start.value).toDateString(),
+        end_date: new Date(this.leave_end.value).toDateString(),
+        days: this.leaves
+      };
+      this.days.emit(leaveObj);
     }
   }
 

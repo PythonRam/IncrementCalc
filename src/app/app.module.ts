@@ -9,10 +9,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { AppComponent } from './app.component';
 import { MatInputModule, MatNativeDateModule } from '@angular/material';
 import { LeaveComponent } from './components/leave/leave.component';
+import { IncrementComponent } from './components/increment/increment.component';
 @NgModule({
   declarations: [
     AppComponent,
-    LeaveComponent
+    LeaveComponent,
+    IncrementComponent
   ],
   imports: [
     BrowserModule,
