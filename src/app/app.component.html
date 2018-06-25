@@ -7,10 +7,11 @@
   <mat-form-field>
     <input type="number" (change)="computeMinMax()" #dbi [formControl]="days_before_increment" matInput placeholder="Days before increment">
   </mat-form-field>
+  <span *ngIf="date_of_increment">{{date_of_increment.toDateString()}}</span>
 </div>
 
 <div id="leaveContainer">
-  <app-leave *ngFor="let leave of leaves; let i = index;" [minDate]="minDate" [maxDate]="maxDate" (days)="days(e,i)" (delete)="delete(i)" ></app-leave>
+  <app-leave *ngFor="let leave of leaves; let i = index;" [minDate]="minDate" [maxDate]="maxDate" (days)="days($event,i)" (delete)="delete(i)" ></app-leave>
 </div>
 
 <div id="addLeave">

@@ -1,16 +1,19 @@
 <div class="leave-container">
   <button class="deleteButton" (click)="DeleteLeave()">Delete</button>
   <mat-form-field>
-    <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="dls" placeholder="Leave Start Date" [formControl]="leave_start">
+    <input matInput id="start_date" (dateChange)="computeDays()" [min]="minDate" [max]="maxDate" [matDatepicker]="dls" placeholder="Leave Start Date"
+      [formControl]="leave_start">
     <mat-datepicker-toggle matSuffix [for]="dls"></mat-datepicker-toggle>
     <mat-datepicker #dls></mat-datepicker>
   </mat-form-field>
-  <mat-form-field>
-    <input matInput [min]="leave_start" [max]="maxDate" [matDatepicker]="dle" placeholder="Leave End Date" [formControl]="leave_end">
+  <mat-form-field [hidden]="leave_start.valid">
+    <input id="end_date" matInput (dateChange)="computeDays()" [min]="leave_start.value" [max]="maxDate" [matDatepicker]="dle"
+      placeholder="Leave End Date" [formControl]="leave_end">
     <mat-datepicker-toggle matSuffix [for]="dle"></mat-datepicker-toggle>
     <mat-datepicker #dle></mat-datepicker>
   </mat-form-field>
   <span>
-    Number of days
+    Number of leaves:
+    <b>{{leaves}}</b>
   </span>
 </div>
