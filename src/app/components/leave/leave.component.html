@@ -1,0 +1,16 @@
+<div class="leave-container">
+  <button class="deleteButton">Delete</button>
+  <mat-form-field>
+    <input matInput [matDatepicker]="dls" placeholder="Leave Start Date" [formControl]="leave_start">
+    <mat-datepicker-toggle matSuffix [for]="dls"></mat-datepicker-toggle>
+    <mat-datepicker #dls></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [matDatepicker]="dle" placeholder="Leave End Date" [formControl]="leave_end">
+    <mat-datepicker-toggle matSuffix [for]="dle"></mat-datepicker-toggle>
+    <mat-datepicker #dle></mat-datepicker>
+  </mat-form-field>
+  <span>
+    Number of days
+  </span>
+</div>
